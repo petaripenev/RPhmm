@@ -5,10 +5,10 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Python: Current File",
+			"name": "Generate RP HMMs",
 			"type": "python",
 			"request": "launch",
-			"program": "${file}",
+			"program": "${workspaceFolder}/generateRPhmms.py",
 			"console": "integratedTerminal",
 			"args": ["-o", "./RP_HMMs"]
 		}
