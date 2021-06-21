@@ -3,7 +3,6 @@
 import sys, json, argparse, urllib.request
 from subprocess import Popen, PIPE
 from os import remove, path, mkdir
-from warnings import warn
 
 def create_and_parse_argument_options(argument_list):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
