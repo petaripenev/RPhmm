@@ -8,6 +8,7 @@ from warnings import warn
 def create_and_parse_argument_options(argument_list):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument('-o','--output_path', help='Output path to folder where hmms will be stored.')
+    parser.add_argument('-t','--taxonomic_ids', help='List taxonomic ids for groups available on proteovision (Default: 2,2157,2759).', default='2,2157,2759')
     commandline_args = parser.parse_args(argument_list)
     return commandline_args
 
@@ -64,7 +65,8 @@ def makeHMMfromAln (taxID, alnString, hmmName, outpath):
 def main(commandline_arguments):
     '''Main entry point'''
     comm_args = create_and_parse_argument_options(commandline_arguments)
-    taxIDtoNames = get_avail_alns([2759,2157,2])
+    taxIDs = comm_args.taxonomic_ids.split(',')
+    taxIDtoNames = get_avail_alns(taxIDs)
     for taxID,nameToids  in taxIDtoNames.items():
         nameToAlns = get_alns (taxID, nameToids)
         for name, alnString in nameToAlns:
