@@ -10,7 +10,18 @@
 			"request": "launch",
 			"program": "${workspaceFolder}/generateRPhmms.py",
 			"console": "integratedTerminal",
-			"args": ["-o", "./RP_HMMs"]
-		}
+			"args": [
+				"-o", "./RP_HMMs"
+			]
+		},{
+			"name": "Parse hmmsearch results",
+			"type": "python",
+			"request": "launch",
+			"program": "${workspaceFolder}/identifyRPs.py",
+			"console": "integratedTerminal",
+			"args": [
+				"./hmmOUT/Archaea"
+			]
+		},
 	]
 }
