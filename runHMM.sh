@@ -6,7 +6,7 @@ for protSeq in ./proteinSeqs/*.faa; do
 	mkdir $outDir
 	for f in RP_HMMs/2157/*; do 
 		g=${f##*/}; 
-		hmmsearch --tblout $outDir/${g%.hmm}.out --cpu 12 $f $protSeq ; 
+		hmmsearch --tblout $outDir/${g%.hmm}.out -T 50 --cpu 12 $f $protSeq ; 
 	done;
 done
 
