@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-import sys, csv, json, argparse
-from subprocess import Popen, PIPE
-from os import remove, path, mkdir, walk
+import sys, csv, argparse
+from os import path, walk
 
 def create_and_parse_argument_options(argument_list):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
@@ -54,8 +53,6 @@ def main (commandline_arguments):
         write = csv.writer(f)
         write.writerow(headerList)
         write.writerows(csvList)
-
-
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
