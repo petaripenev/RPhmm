@@ -20,7 +20,8 @@
 			"program": "${workspaceFolder}/identifyRPs.py",
 			"console": "integratedTerminal",
 			"args": [
-				"./hmmOUT/Archaea"
+				"./hmmOUT/Archaea",
+				"-fasta", "./proteinSeqs"
 			]
 		},
 	]
