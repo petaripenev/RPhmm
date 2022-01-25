@@ -5,23 +5,37 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Extract Rfam in fasta",
+			"type": "python",
+			"request": "launch",
+			"program": "extractRfamSeq.py",
+			"console": "integratedTerminal",
+			"args": ["./test_data/test_sorting_rfam_results.tblout",
+					 "LSU_rRNA.*",
+					 "./test_data/test_contigs_sorting.fasta",
+					 "-io", "-ib"]
+		},
+		{
 			"name": "Generate RP HMMs",
 			"type": "python",
 			"request": "launch",
 			"program": "${workspaceFolder}/generateRPhmms.py",
 			"console": "integratedTerminal",
 			"args": [
-				"-o", "./RP_HMMs"
+				"-o",
+				"./RP_HMMs"
 			]
-		},{
+		},
+		{
 			"name": "Parse hmmsearch results",
 			"type": "python",
 			"request": "launch",
 			"program": "${workspaceFolder}/identifyRPs.py",
 			"console": "integratedTerminal",
 			"args": [
-				"./hmmOUT/Archaea",
-				"-fasta", "./proteinSeqs"
+				"./BorgProtSeqs/hmmOUT",
+				"-fasta",
+				"./BorgProtSeqs"
 			]
 		},
 	]
