@@ -9,3 +9,4 @@ Rfam/*
 rRNA/*
 test_data/*
 old_runs/*
+*.pyc
