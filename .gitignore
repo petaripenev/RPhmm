@@ -1,3 +1,11 @@
 RP_HMMs/*
 proteinSeqs/*
 hmmOUT/*
+BorgProtSeqs/*
+testProjects/*
+rRNAOUT/tests/*
+rRNAOUT/*
+Rfam/*
+rRNA/*
+test_data/*
+old_runs/*
